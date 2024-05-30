@@ -1,0 +1,28 @@
+.abs-fill {
+  @include position(0);
+  position: absolute;
+}
+
+.abs-center {
+  position: absolute;
+  @include offset(50%, 50%);
+  transform: translate(-50%, -50%);
+}
+
+.split-element {
+  display: inline-block;
+  position: relative;
+  text-decoration: inherit;
+}
+
+.split-lines {
+  //white-space: nowrap;
+}
+
+.mask-split-line {
+  overflow: hidden;
+}
+
+.split-words {
+  white-space: nowrap;
+}

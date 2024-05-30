@@ -1,0 +1,25 @@
+@mixin fluid-font-size(
+  $minValue,
+  $maxValue,
+  $minViewportWidth: $minimumFluidTypeViewportWidth,
+  $maxViewportWidth: $maximumFluidTypeViewportWidth,
+  $remify: false
+) {
+  font-size: fluid(
+    $minValue,
+    $maxValue,
+    $minViewportWidth,
+    $maxViewportWidth,
+    $remify,
+    false,
+    true
+  );
+
+  @supports (font-size: max(1rem, 2rem)) {
+    font-size: fluid($minValue, $maxValue, $minViewportWidth, $maxViewportWidth, $remify, false);
+  }
+
+  @supports (font-size: clamp(1rem, 1vw, 2rem)) {
+    font-size: fluid($minValue, $maxValue, $minViewportWidth, $maxViewportWidth, $remify);
+  }
+}

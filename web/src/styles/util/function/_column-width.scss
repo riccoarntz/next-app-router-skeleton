@@ -1,0 +1,6 @@
+@function column-width($columnCount, $gapCount: $columnCount - 1, $gutterAmount: 0) {
+  @return calc(
+    (var(--grid-column-width) * #{$columnCount}) + (var(--grid-gap) * #{$gapCount}) +
+      (var(--grid-gutter) * #{$gutterAmount})
+  );
+}

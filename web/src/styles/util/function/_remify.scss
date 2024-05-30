@@ -1,0 +1,14 @@
+@function strip-unit-extended($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function remify($value, $remify: true, $base: $baseFontSize) {
+  @if $remify {
+    @return #{strip-unit-extended($value) / $base}rem;
+  }
+  @return $value;
+}

@@ -1,0 +1,24 @@
+.scroll-wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+
+  .scroll-content {
+  }
+  .scroll-inner-content {
+  }
+}
+
+.scrollbar-track {
+  background-color: rgba(var(--background-color), 0) !important;
+  position: absolute;
+  @include position(0, 0, 0, auto);
+  mix-blend-mode: difference;
+}
+
+.scrollbar-thumb {
+  background-color: var(--foreground-color) !important;
+  border-radius: 0 !important;
+  transition: background-color 250ms $easeInOutQuad;
+  left: 50% !important;
+}

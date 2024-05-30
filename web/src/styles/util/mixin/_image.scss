@@ -1,0 +1,27 @@
+@mixin background-image($path, $defaultExtension) {
+  :global(.use-no-modern-image) & {
+    background-image: url($path + $defaultExtension);
+  }
+
+  //:global(.use-avif) & {
+  //  background-image: url($path + ".avif");
+  //}
+
+  :global(.use-webp) & {
+    background-image: url($path + ".webp");
+  }
+}
+
+@mixin background($path, $defaultExtension, $args: null) {
+  :global(.use-no-modern-image) & {
+    background: url($path + $defaultExtension) $args;
+  }
+
+  //:global(.use-avif) & {
+  //  background: url($path + ".avif") $args;
+  //}
+
+  :global(.use-webp) & {
+    background: url($path + ".webp") #{$args};
+  }
+}

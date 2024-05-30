@@ -1,0 +1,22 @@
+.input-field {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  background-color: transparent;
+  vertical-align: middle;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-indent: 0;
+  outline: none;
+  line-height: 1;
+  -webkit-appearance: none;
+
+  ::-ms-clear {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

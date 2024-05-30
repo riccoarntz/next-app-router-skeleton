@@ -1,0 +1,24 @@
+.grid-checker {
+  @include position(0, auto, 0, 50%);
+  transform: translateX(-50%);
+  position: fixed;
+  max-width: $maxContentWidth;
+  width: 100%;
+  //@include vw-property(width, 100);
+  display: none;
+
+  &.is-visible {
+    display: block;
+    pointer-events: none;
+    z-index: 99999;
+  }
+
+  div {
+    height: 100%;
+  }
+}
+
+.grid-column {
+  min-height: 50px;
+  background: rgba(red, 0.1);
+}

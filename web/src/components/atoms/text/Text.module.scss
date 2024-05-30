@@ -1,0 +1,15 @@
+/* stylelint-disable-next-line block-no-empty */
+.text {
+  //margin-top: 0;
+  //margin-bottom: 0;
+}
+
+// Title
+.title-80 {
+  @include title-80();
+}
+
+// Body
+.body-10 {
+  @include body-10();
+}

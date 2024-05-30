@@ -1,0 +1,4 @@
+.main {
+    padding-top: var(--site-header-height);
+    min-height: calc(100vh - var(--site-header-height));
+}

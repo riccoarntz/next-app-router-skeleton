@@ -1,0 +1,16 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+
+  svg {
+    fill: currentColor;
+    display: block;
+    width: 100%;
+  }
+
+  &.transparent {
+    svg {
+      fill: transparent;
+    }
+  }
+}

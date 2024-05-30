@@ -1,0 +1,26 @@
+@function fluid(
+  $minValue,
+  $maxValue,
+  $minViewportWidth: $minimumFluidTypeViewportWidth,
+  $maxViewportWidth: $maximumFluidTypeViewportWidth,
+  $remify: false,
+  $useClamp: true,
+  $useFallback: false
+) {
+  $additionalSize: #{strip-unit($minViewportWidth) / 100}px;
+  $minSize: remify($minValue, $remify);
+  $maxSize: remify($maxValue, $remify);
+  $calc: #{calc(
+      #{$minSize} + ((#{1vw} - #{$additionalSize}) * #{100 * ($maxValue - $minValue) /
+            ($maxViewportWidth - $minViewportWidth)})
+    )};
+
+  @if $useFallback {
+    @return $calc;
+  }
+
+  @if $useClamp {
+    @return clamp(#{$minSize}, #{$calc}, #{$maxSize});
+  }
+  @return max(#{$minSize}, #{$calc});
+}

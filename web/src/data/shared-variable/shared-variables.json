@@ -1,0 +1,48 @@
+{
+  "comments": ["'NOTE: The below can be a start, change according to your ux/project'", "'Only add key to deviceState that are used in the DeviceStateTracker'", "'Please mind the quotes: https://github.com/Updater/node-sass-json-importer#importing-strings'"],
+  "primaryColors": {
+    "background": "#FFF",
+    "foreground": "#000"
+  },
+  "mediaQueries": {
+    "MAX_479": "'(max-width: 479px)'",
+    "MIN_0": "'(min-width: 0px)'",
+    "MIN_480": "'(min-width: 480px)'",
+    "MIN_768": "'(min-width: 768px)'",
+    "MAX_768": "'(max-width: 768px)'",
+    "MIN_1024": "'(min-width: 1024px)'",
+    "MAX_1024": "'(max-width: 1024px)'",
+    "MIN_1280": "'(min-width: 1280px)'",
+    "MIN_1440": "'(min-width: 1440px)'",
+    "MIN_1680": "'(min-width: 1680px)'",
+    "MIN_1920": "'(min-width: 1920px)'",
+    "MIN_2560": "'(min-width: 2560px)'"
+  },
+  "deviceState": {
+    "MIN_0": 0,
+    "MIN_480": 1,
+    "MIN_768": 2,
+    "MIN_1024": 3,
+    "MIN_1280": 4,
+    "MIN_1440": 5,
+    "MIN_1680": 6,
+    "MIN_1920": 7
+  },
+  "grid": {
+    "MIN_0": {
+      "columnCount": 6,
+      "gap": 0.021333333333333333,
+      "gutter": 16
+    },
+    "MIN_768": {
+      "columnCount": 8,
+      "gap": 0.021333333333333333,
+      "gutter": 24
+    },
+    "MIN_1024": {
+      "columnCount": 16,
+      "gap": 0.01,
+      "gutter": 32
+    }
+  }
+}

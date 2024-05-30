@@ -1,0 +1,11 @@
+/* stylelint-disable-next-line block-no-empty */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: zindex($zLayout, site-header);
+  height: var(--site-header-height);
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+}

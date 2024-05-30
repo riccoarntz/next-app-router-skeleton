@@ -1,0 +1,50 @@
+@mixin grid-system($count, $prefix: "grid-col-") {
+  //@debug $count;
+  @for $i from 1 to $count + 1 {
+    .#{$prefix}#{$i} {
+      grid-column-end: span $i;
+    }
+
+    .#{$prefix}width-#{$i} {
+      width: column-width($i);
+    }
+  }
+}
+
+@mixin setGridProperty($breakpointName, $viewPortWidth: 100vw) {
+  --grid-column-count: #{map_get($grid, $breakpointName, "columnCount")};
+  --grid-gap: #{map_get($grid, $breakpointName, "gap") * $viewPortWidth};
+  --grid-gutter: #{map_get($grid, $breakpointName, "gutter") * 1px};
+}
+
+@mixin setGridProperties() {
+  --grid-column-width: #{calc(
+      (
+          calc(var(--vw) * 100) - var(--grid-gap) * (var(--grid-column-count) - 1) -
+            (var(--grid-gutter) * 2)
+        ) / var(--grid-column-count)
+    )};
+  @include setGridProperty(MIN_0);
+
+  @include respond-to(MIN_768) {
+    @include setGridProperty(MIN_768);
+  }
+  @include respond-to(MIN_1024) {
+    @include setGridProperty(MIN_1024);
+  }
+
+  @include respond-to(MIN_2560) {
+    .max-content-width {
+      --grid-column-width: #{calc(
+          (
+              #{$maxContentWidth} - var(--grid-gap) * (var(--grid-column-count) - 1) - (var(
+                      --grid-gutter
+                    ) * 2)
+            ) / var(--grid-column-count)
+        )};
+
+      @include setGridProperty(MIN_1024, $maxContentWidth);
+      max-width: $maxContentWidth;
+    }
+  }
+}

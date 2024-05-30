@@ -1,0 +1,20 @@
+/*
+ * Use this mixin for all fluid properties. It will use the "fluid" function to set the used property values.
+ */
+@mixin fluid-property($property, $min, $max) {
+  #{$property}: fluid($min, $max, $useClamp: false, $useFallback: true);
+
+  @supports (font-size: max(1rem, 2rem)) {
+    #{$property}: fluid($min, $max, $useClamp: false);
+  }
+
+  @supports (font-size: clamp(1rem, 3vw, 2rem)) {
+    #{$property}: fluid($min, $max, $useClamp: true);
+  }
+}
+
+@function fluid-value($min, $max) {
+  @return fluid($min, $max, $useClamp: false, $useFallback: true);
+  @return fluid($min, $max, $useClamp: false); // not working on old Android.
+  @return fluid($min, $max, $useClamp: true); // not working on old IOS safari.
+}

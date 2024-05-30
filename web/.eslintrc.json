@@ -1,0 +1,290 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb-base",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "prettier"
+    // required to disable eslint rules that affect prettier formatting
+  ],
+  "plugins": [
+    "import",
+    "unicorn",
+    "babel"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "ignorePatterns": [
+    "/*.*"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    // extraFileExtensions: [".cjs"],
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "require": true,
+    "process": true
+  },
+  "rules": {
+
+    "consistent-return": "off",
+    "no-shadow": "off",
+    // this is the same rule configuration as in `eslint-config-airbnb`
+    // with the `ForOfStatement` selector omitted, as using `for ... of` statements in modern browsers is fine
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ForInStatement",
+        "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+      },
+      {
+        "selector": "LabeledStatement",
+        "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+      },
+      {
+        "selector": "WithStatement",
+        "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+      }
+    ],
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "generic",
+        "readonly": "generic"
+      }
+    ],
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/consistent-type-assertions": "error",
+    "@typescript-eslint/explicit-member-accessibility": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+//      {
+//        "selector": "default",
+//        "format": [
+//          "strictCamelCase"
+//        ],
+//        "leadingUnderscore": "forbid",
+//        "trailingUnderscore": "forbid"
+//      },
+      {
+        "selector": "objectLiteralProperty",
+        "modifiers": [
+          "requiresQuotes"
+        ],
+        "format": null
+      },
+      {
+        "selector": "objectLiteralProperty",
+        "format": [
+          "strictCamelCase",
+          "snake_case"
+        ],
+        // unfortunately story-blok data forces us.
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "typeLike",
+        "format": [
+          "StrictPascalCase"
+        ]
+      },
+      {
+        "selector": "parameter",
+        "format": [
+          "strictCamelCase",
+          "StrictPascalCase",
+          "snake_case"
+        ]
+      },
+      {
+        "selector": "typeProperty",
+        "format": [
+          "strictCamelCase",
+          "snake_case"
+        ],
+        // unfortunately cms data forces us.
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "function",
+        // Exception for FunctionComponents
+        "format": [
+          "strictCamelCase",
+          "StrictPascalCase"
+        ]
+      },
+      {
+        "selector": "variable",
+        // Exception for components wrapperd in HOC"s and for React"s Context
+        "format": [
+          "strictCamelCase",
+          "StrictPascalCase",
+          "UPPER_CASE",
+          "snake_case"
+        ],
+        // unfortunately cms data forces us.
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "enumMember",
+        "format": [
+          "StrictPascalCase"
+        ]
+      }
+    ],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ],
+    "@typescript-eslint/prefer-interface": "off",
+    "@typescript-eslint/prefer-readonly": "error",
+    "camelcase": "off",
+    "babel/no-unused-expressions": "error",
+    "default-case": "error",
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "hbs": "never",
+        "vue": "never"
+      }
+    ],
+    "import/no-unresolved": "error",
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.ts",
+          "**/*.stories.tsx",
+          "**/*.test.ts",
+          "**/*.spec.ts",
+          "**/*.test.tsx",
+          "**/*.spec.tsx",
+          "**/test-utils/**/*.ts"
+        ]
+      }
+    ],
+    "lines-between-class-members": "off",
+    "max-lines": "off",
+    "no-console": "warn",
+    "no-debugger": "error",
+    "no-plusplus": "off",
+    "max-classes-per-file": "off",
+    "no-restricted-properties": [
+      "error",
+      {
+        "object": "document",
+        "property": "querySelector"
+      },
+      {
+        "object": "document",
+        "property": "querySelectorAll"
+      }
+    ],
+    "no-undef": "off",
+    // TypeScript already handles this
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "off",
+    "react/static-property-placement": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
+    // no longer needed with the new JSX transform
+    "react-hooks/exhaustive-deps": "error",
+    "react/button-has-type": "error",
+    "react/display-name": "off",
+    "react/jsx-boolean-value": "error",
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "never",
+        "children": "never"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-wrap-multilines": "off",
+    "react/no-array-index-key": "error",
+    "react/no-this-in-sfc": "error",
+    "react/no-unused-prop-types": "error",
+    "react/no-unused-state": "error",
+    "react/void-dom-elements-no-children": "error",
+    "unicorn/catch-error-name": "error",
+    "unicorn/custom-error-definition": "off",
+    "unicorn/error-message": "error",
+    "unicorn/escape-case": "error",
+    "unicorn/explicit-length-check": "error",
+    "unicorn/new-for-builtins": "error",
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/no-array-instanceof": "error",
+    "unicorn/no-console-spaces": "error",
+    "unicorn/no-fn-reference-in-iterator": "off",
+    "unicorn/no-for-loop": "error",
+    "unicorn/no-hex-escape": "error",
+    "unicorn/no-new-buffer": "error",
+    "unicorn/no-process-exit": "error",
+    "unicorn/no-unreadable-array-destructuring": "error",
+    "unicorn/no-unsafe-regex": "off",
+    "unicorn/no-unused-properties": "error",
+    "unicorn/no-zero-fractions": "error",
+    "unicorn/number-literal-case": "error",
+    "unicorn/prefer-exponentiation-operator": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-node-remove": "error",
+    "unicorn/prefer-query-selector": "error",
+    "unicorn/prefer-starts-ends-with": "error",
+    "unicorn/prefer-text-content": "error",
+    "unicorn/prefer-type-error": "error",
+    "unicorn/throw-new-error": "error",
+    // prettier handles these
+    "object-curly-newline": "off",
+    "max-len": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error"
+    ],
+    "no-extra-boolean-cast": "off",
+    "class-methods-use-this": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-nested-ternary": "off",
+    "import/no-cycle": "off"
+  }
+}
