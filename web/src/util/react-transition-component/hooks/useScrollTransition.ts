@@ -1,4 +1,3 @@
-import type ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import type { RefObject } from 'react';
 import useScrollTrigger from 'hooks/useScrollTrigger';
 import { useTransitionController } from './useTransitionController';

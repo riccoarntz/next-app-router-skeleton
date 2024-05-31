@@ -3,7 +3,7 @@ import type { Page } from '../data/types/page.types';
 
 // todo integrate prepr?
 async function getPageData(slug: string, preview?: boolean): Promise<Page> {
-  // console.log(preview);
+  console.log(preview);
   // todo await connect prepr
   return {
     pageTitle: 'my page title',

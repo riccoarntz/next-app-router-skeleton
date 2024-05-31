@@ -15,7 +15,8 @@
   ],
   "parser": "@typescript-eslint/parser",
   "ignorePatterns": [
-    "/*.*"
+    "/*.*",
+    "**/.next/**"
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -36,7 +37,6 @@
     "process": true
   },
   "rules": {
-
     "consistent-return": "off",
     "no-shadow": "off",
     // this is the same rule configuration as in `eslint-config-airbnb`
@@ -70,14 +70,14 @@
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/naming-convention": [
       "error",
-//      {
-//        "selector": "default",
-//        "format": [
-//          "strictCamelCase"
-//        ],
-//        "leadingUnderscore": "forbid",
-//        "trailingUnderscore": "forbid"
-//      },
+      //      {
+      //        "selector": "default",
+      //        "format": [
+      //          "strictCamelCase"
+      //        ],
+      //        "leadingUnderscore": "forbid",
+      //        "trailingUnderscore": "forbid"
+      //      },
       {
         "selector": "objectLiteralProperty",
         "modifiers": [
