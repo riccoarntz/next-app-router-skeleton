@@ -9,18 +9,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                     children,
-                                   }: Readonly<{
+  children,
+}: Readonly<{
   children: React.ReactNode;
 }>) {
   const siteSettings = {};
   return (
-    <html lang='en'>
-    <body>
-    <GlobalProvider siteSettingsData={siteSettings}>
-      <Site>{children}</Site>
-    </GlobalProvider>
-    </body>
+    <html lang="en">
+      <body>
+        <GlobalProvider siteSettingsData={siteSettings}>
+          <Site>{children}</Site>
+        </GlobalProvider>
+      </body>
     </html>
   );
 }

@@ -20,7 +20,7 @@ export default function(plop) {
           { name: "Atoms", value: "atoms" },
           { name: "Molecules", value: "molecules" },
           { name: "Organisms", value: "organisms" },
-          { name: "CMS Slice", value: "slices" },
+          { name: "CMS Block", value: "blocks" },
           { name: "Layout", value: "layout" },
           { name: "Unlisted", value: "unlisted" }
         ],
@@ -41,7 +41,7 @@ export default function(plop) {
       {
         name: "directory",
         type: "input",
-        message: `Where in /pages/ directory do you want to create this?`,
+        message: `Where in /app/ directory do you want to create this?`,
         when: ({ template }) => template === "page"
       }
     ],
@@ -53,7 +53,7 @@ export default function(plop) {
         type = "atoms";
       }
 
-      let rootDir = template === "page" ? "pages" : `components/${type}`;
+      let rootDir = template === "page" ? "app" : `components/${type}`;
 
       let subFolder;
       if (!directory) {
@@ -64,7 +64,7 @@ export default function(plop) {
 
       const data = {
         componentName: `${name}`,
-        isCmsComponent: type === "slices"
+        isCmsComponent: type === "blocks"
       };
 
       const componentDirName = "{{kebabCase componentName}}";

@@ -7,36 +7,27 @@ import Icon from '../atoms/icon/Icon';
 import DynamicComponent from '../DynamicComponent';
 import type { Page } from '../../data/types/page.types';
 
-export default function PageContentRenderer({ page, className }: {
-  page: Page
+export default function PageContentRenderer({
+  page,
+  className,
+}: {
+  page: Page;
   className?: string;
 }) {
   return (
     <main className={classNames(styles.main, className, 'grid-gutter max-content-width')}>
-      <Text
-        as='h3'
-        size='title-80'
-      >
+      <Text as="h3" size="title-80">
         title-80: lorem ipsum el {page.slug}
       </Text>
 
-      <Text
-        as='p'
-        size='body-10'
-      >
+      <Text as="p" size="body-10">
         body 10: lorem ipsum
       </Text>
 
-      <Icon name='twitter' />
+      <Icon name="twitter" />
 
       {page?.blocks?.map((module) =>
-        module._key ? (
-          <DynamicComponent
-            canTransitionIn
-            data={module}
-            key={module._key}
-          />
-        ) : null,
+        module._key ? <DynamicComponent canTransitionIn data={module} key={module._key} /> : null,
       )}
     </main>
   );

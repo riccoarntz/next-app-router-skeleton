@@ -12,10 +12,7 @@ export default forwardRef<SiteFooterRef, SiteFooterProps>(({ ...props }, ref): R
   return (
     <footer ref={elementRef} className={classNames(styles.siteFooter, props.className)}>
       <div className="grid-gutter max-content-width">
-        <Text
-          as='p'
-          size='body-10'
-        >
+        <Text as="p" size="body-10">
           site-footer
         </Text>
       </div>

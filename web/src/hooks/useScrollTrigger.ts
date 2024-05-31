@@ -6,7 +6,10 @@ import type { RefObject } from 'react';
 import { createScrollTrigger } from 'util/scroll/scrollTrigger.utils';
 import { useScroller } from 'components/unlisted/ScrollProvider';
 import { findTransitionController } from 'util/core-transition-component/context/TransitionControllers';
-import type { TransitionController, TransitionDirection } from 'util/core-transition-component/types/transition.types';
+import type {
+  TransitionController,
+  TransitionDirection,
+} from 'util/core-transition-component/types/transition.types';
 import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
 import gsap from 'gsap';
 
@@ -103,9 +106,9 @@ export default function useScrollTrigger(options: OptionsType): {
   const triggerState = useRef<TriggerState>();
   const canTransition = useRef(options.canTransitionIn);
 
-  useIsomorphicLayoutEffect(()=> {
+  useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-  }, [])
+  }, []);
 
   // todo add/wrap a usePageLoad/canAnimateIn hook
 

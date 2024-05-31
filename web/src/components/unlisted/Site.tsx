@@ -46,7 +46,7 @@ const Site: NextPage<SiteProps> = ({ children }) => {
         }
       `}</style>
       <SiteHeader />
-      <ScrollProvider root type='Lenis'>
+      <ScrollProvider root type="Lenis">
         {children}
         <SiteFooter />
       </ScrollProvider>

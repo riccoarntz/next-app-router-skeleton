@@ -4,9 +4,12 @@ import { useEffect, useRef } from 'react';
 function useUpdateEffect(effect: EffectCallback, deps?: DependencyList): void {
   const isMounted = useRef(false);
 
-  useEffect(() => () => {
+  useEffect(
+    () => () => {
       isMounted.current = false;
-    }, []);
+    },
+    [],
+  );
 
   useEffect(() => {
     if (!isMounted.current) {

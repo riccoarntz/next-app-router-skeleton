@@ -1,6 +1,5 @@
 import type { RefObject } from 'react';
 import { fadeTo } from 'util/animation/fade/fade';
-import type gsap from 'gsap';
 
 interface SiteHeaderRefs {
   elementRef?: RefObject<HTMLElement>;

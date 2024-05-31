@@ -16,7 +16,6 @@ const fileCacheMiddleware = async (key, fn) => {
     return data;
   }
   return fn();
-
 };
 
 export default fileCacheMiddleware;

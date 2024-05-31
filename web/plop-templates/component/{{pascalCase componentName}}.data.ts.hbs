@@ -1,6 +1,6 @@
 {{# if isCmsComponent}}
 import type { TransitionComponentProps } from 'util/react-transition-component/types/transitionComponent.types';
-import { SanityModuleData } from 'data/types/module.types';
+import type { CmsModuleData } from 'data/types/module.types';
 {{ else }}
 import type { TransitionComponentProps } from 'util/react-transition-component/types/transitionComponent.types';
 {{/if }}
@@ -10,7 +10,7 @@ export type {{pascalCase componentName}}Ref = HTMLElement;
 export type {{pascalCase componentName}}Data = {
   // example to remove
   headline: string;
-} & SanityModuleData
+} & CmsModuleData
 export type {{pascalCase componentName}}Props = {
   data: {{pascalCase componentName}}Data;
 } & TransitionComponentProps;
