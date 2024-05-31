@@ -1,0 +1,16 @@
+import type { TransitionComponentProps } from 'util/react-transition-component/types/transitionComponent.types';
+import type { AbstractCtaProps } from 'data/button';
+import type { BaseButtonRef } from '../base-button/BaseButton.data';
+
+export type {{pascalCase componentName}}Ref = BaseButtonRef;
+
+export const buttonSizes = [
+  // 'medium',
+] as const;
+
+export type ButtonSize = typeof buttonSizes[number];
+
+export type {{pascalCase componentName}}Props = {
+  // icon?: string;
+  size?: ButtonSize;
+} & AbstractCtaProps & TransitionComponentProps;
