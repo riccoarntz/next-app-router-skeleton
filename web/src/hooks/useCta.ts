@@ -1,5 +1,5 @@
 import type { AbstractCtaProps, ButtonType, LinkTarget } from 'data/button';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter } from 'next/navigation';
 import type { MutableRefObject } from 'react';
 import { useMemo, useRef } from 'react';
 import { stripQueriesFromUrl } from '../util/url.utils';
@@ -21,6 +21,7 @@ export function useCta(props: AbstractCtaProps): {
   text?: string;
 } {
   const router = useRouter();
+  const path = usePathname();
   // todo resolve Prepr page-references?
   const linkData = useMemo(() => {
     if (props.link) {
@@ -77,7 +78,7 @@ export function useCta(props: AbstractCtaProps): {
       url = props.href || linkData?.url; // todo localize path?
 
       if (props.href?.startsWith('?')) {
-        url = `${stripQueriesFromUrl(router.asPath)}${props.href}`;
+        url = `${stripQueriesFromUrl(path)}${props.href}`;
       }
     }
     // Is External URL
@@ -93,7 +94,7 @@ export function useCta(props: AbstractCtaProps): {
     }
 
     return url;
-  }, [isCustomAction, props.href, router.asPath, linkData?.url]);
+  }, [isCustomAction, props.href, path, linkData?.url]);
 
   function handleClick(event?: Event): void {
     if (!isExternalUrl.current && url) {

@@ -2,7 +2,6 @@ import '../styles/global.scss';
 import type { Metadata } from 'next';
 import GlobalProvider from 'components/unlisted/GlobalProvider';
 import Site from '../components/unlisted/Site';
-import { FlowProvider } from '../util/react-transition-component/components/FlowProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -10,20 +9,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   const siteSettings = {};
   return (
-    <html lang="en">
-      <body>
-        <FlowProvider>
-          <GlobalProvider siteSettingsData={siteSettings}>
-            <Site>{children}</Site>
-          </GlobalProvider>
-        </FlowProvider>
-      </body>
+    <html lang='en'>
+    <body>
+    <GlobalProvider siteSettingsData={siteSettings}>
+      <Site>{children}</Site>
+    </GlobalProvider>
+    </body>
     </html>
   );
 }

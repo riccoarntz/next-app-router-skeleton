@@ -1,0 +1,6 @@
+/* stylelint-disable-next-line block-no-empty */
+.dynamic-page {
+  position: relative;
+  padding-top: var(--site-header-height);
+  min-height: calc(100vh - var(--site-header-height));
+}

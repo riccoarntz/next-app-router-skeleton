@@ -1,3 +1,5 @@
+'use client';
+
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { RefObject } from 'react';

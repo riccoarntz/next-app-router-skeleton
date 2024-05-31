@@ -12,5 +12,5 @@ export type PageReference = {
 
 export type Page = {
   seo: Seo;
-  slices?: Array<CmsModuleData>;
+  blocks?: Array<CmsModuleData>;
 } & PageReference;

@@ -1,14 +1,15 @@
-import { useRouter } from 'next/router';
-import type { NextRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useRef, useState } from 'react';
+// import type { NextRouter } from 'next/router';
+import type { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
-export default function useRouterPush(): NextRouter['push'] {
+export default function useRouterPush(): AppRouterInstance['push'] {
   const router = useRouter();
   const routerRef = useRef(router);
 
   routerRef.current = router;
 
-  const [{ push }] = useState<Pick<NextRouter, 'push'>>({
+  const [{ push }] = useState<Pick<AppRouterInstance, 'push'>>({
     push: (path) => routerRef.current.push(path),
   });
   return push;

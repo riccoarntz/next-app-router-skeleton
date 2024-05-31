@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext, useMemo } from 'react';
 import type { ReactElement, ReactNode, SetStateAction, Dispatch } from 'react';
 
 import { create } from 'zustand';
@@ -27,7 +27,6 @@ const useStore = create(() => ({}));
 function useCurrentContext() {
   const local = useGlobalContext() as GlobalContextType;
   const root = useStore();
-
   return local ?? root;
 }
 
@@ -36,13 +35,11 @@ export function useGlobalProvider(): {
   siteSettings?: SiteSettings;
 } {
   const { siteSettings, setSiteSettings } = useCurrentContext();
-
   return { siteSettings, setSiteSettings };
 }
 
 export default function GlobalProvider({ children, siteSettingsData }: GlobalProps): ReactElement {
   const [siteSettings, setSiteSettings] = useState<SiteSettings>(siteSettingsData);
-
   return (
     <GlobalContext.Provider
       value={{
