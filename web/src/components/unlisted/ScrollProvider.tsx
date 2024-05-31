@@ -7,7 +7,7 @@ import type { WheelDirection } from 'util/scroll/WheelGesture';
 import { create } from 'zustand';
 import { useRouter } from 'next/navigation';
 import useIsomorphicLayoutEffect from '../../hooks/useIsomorphicLayoutEffect';
-import useGlobalStore from '../../stores/globalStore';
+// import useGlobalStore from '../../stores/globalStore';
 
 export interface ScrollProviderContextType {
   instance?: ScrollInstance;
@@ -132,11 +132,12 @@ export default function ScrollProvider({
 
   // todo move in an hook to app.ts and wait for page-state ready orso before we scroll
   // Hash change listener
-  const pageTransitionInCompleted = useGlobalStore((state) => state.pageTransitionInCompleted);
+  // const pageTransitionInCompleted = useGlobalStore((state) => state.pageTransitionInCompleted);
   const [hash, setHash] = useState<string>();
   const router = useRouter();
   useIsomorphicLayoutEffect(() => {
-    if (root && instance && hash && pageTransitionInCompleted) {
+    if (root && instance && hash) {
+      // && pageTransitionInCompleted
       if (hash.includes('=')) return;
       try {
         // eslint-disable-next-line no-restricted-properties
@@ -150,7 +151,7 @@ export default function ScrollProvider({
         // ignore the exception, the hash is probably a query string argument not a anchor link
       }
     }
-  }, [instance, hash, root, pageTransitionInCompleted]);
+  }, [instance, hash, root]); // pageTransitionInCompleted
 
   useIsomorphicLayoutEffect(() => {
     const { hash } = window.location;
