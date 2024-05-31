@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, createContext, useContext, useMemo } from 'react';
+import { useState, createContext, useContext } from 'react';
 import type { ReactElement, ReactNode, SetStateAction, Dispatch } from 'react';
 
 import { create } from 'zustand';
