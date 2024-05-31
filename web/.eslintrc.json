@@ -15,8 +15,7 @@
   ],
   "parser": "@typescript-eslint/parser",
   "ignorePatterns": [
-    "/*.*",
-    "**/.next/**"
+    "/*.*"
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
