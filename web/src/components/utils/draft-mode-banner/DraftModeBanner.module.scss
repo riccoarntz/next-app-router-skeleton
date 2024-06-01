@@ -1,0 +1,12 @@
+.draft-mode-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: zindex($zLayout, draft-mode-banner);
+  padding: 12px 24px;
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+  display: flex;
+  gap: 24px;
+}

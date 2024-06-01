@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import GlobalProvider from 'components/unlisted/GlobalProvider';
 import Site from '../components/unlisted/Site';
 import type { Link } from '../data/types/link.types';
+import { draftMode } from 'next/headers';
+import DraftModeBanner from '../components/utils/draft-mode-banner/DraftModeBanner';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,6 +16,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { isEnabled: draftEnabled } = draftMode();
+
   // todo global site settings from prepr?
   const siteSettings = {
     menuLinks: [
@@ -35,6 +39,7 @@ export default function RootLayout({
       <body>
         <GlobalProvider siteSettingsData={siteSettings}>
           <Site>{children}</Site>
+          {draftEnabled && <DraftModeBanner />}
         </GlobalProvider>
       </body>
     </html>

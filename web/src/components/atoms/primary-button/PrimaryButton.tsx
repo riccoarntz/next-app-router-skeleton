@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'clsx';
 import type { ReactElement, RefObject } from 'react';
 import { forwardRef, useCallback, useRef } from 'react';
