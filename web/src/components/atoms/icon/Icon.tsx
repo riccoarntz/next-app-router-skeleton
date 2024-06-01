@@ -1,4 +1,6 @@
-import type { RefObject } from 'react';
+'use client';
+
+import type { ComponentType, RefObject } from 'react';
 import { forwardRef, useRef } from 'react';
 import classNames from 'clsx';
 import styles from './Icon.module.scss';
@@ -9,12 +11,13 @@ export type IconProps = {
   className?: string;
   transparent?: boolean;
 };
-
+const icons: { [key: string]: ComponentType<unknown> } = {
+  twitter: dynamic(() => import(`../../../assets/svg/twitter.svg`)),
+};
 export default forwardRef<HTMLElement, IconProps>(
   ({ name, className, transparent = false, ...rest }, ref): JSX.Element | null => {
     const localRef = useRef(null);
     const elementRef = (ref || localRef) as RefObject<HTMLDivElement>;
-    const Svg = dynamic(() => import(`../../../assets/svg/${name}.svg`));
 
     // const ImportedIconRef = useRef<FC<SVGProps<SVGSVGElement>>>();
     // const [loading, setLoading] = useState(false);
@@ -22,7 +25,8 @@ export default forwardRef<HTMLElement, IconProps>(
     //   setLoading(true);
     //   const importIcon = async (): Promise<void> => {
     //     try {
-    //       ImportedIconRef.current = (await import(`../../../assets/svg/${name}.svg`)).default;
+    //       ImportedIconRef.current = (await import(`assets/svg/twitter.svg`)).default;
+    //       console.log('load?', ImportedIconRef.current);
     //     } finally {
     //       setLoading(false);
     //     }
@@ -37,9 +41,16 @@ export default forwardRef<HTMLElement, IconProps>(
     //
     // let child;
     // if (!loading && ImportedIconRef.current) {
+    //   console.log('set?');
     //   const { current: ImportedIcon } = ImportedIconRef;
     //   child = <ImportedIcon {...rest} />;
+    //
     // }
+
+    let Component = icons.twitter;
+    if (!Component) {
+      Component = icons.twitter;
+    }
 
     return (
       <div
@@ -48,7 +59,7 @@ export default forwardRef<HTMLElement, IconProps>(
           [styles.transparent]: transparent,
         })}
       >
-        <Svg {...rest} />
+        <Component {...rest} />
       </div>
     );
   },
