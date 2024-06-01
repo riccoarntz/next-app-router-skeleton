@@ -13,6 +13,7 @@ import {
   defaultCanTransitionIn,
   defaultDisableTriggerInOnScroll,
 } from 'util/react-transition-component/types/transitionComponent.types';
+import DebugComponentLabel from 'components/utils/debug-component-label/DebugComponentLabel';
 
 export default forwardRef<{{pascalCase componentName}}Ref, {{pascalCase componentName}}Props>((
   {
@@ -42,6 +43,9 @@ export default forwardRef<{{pascalCase componentName}}Ref, {{pascalCase componen
 
   return (
     <div ref={elementRef} className={classNames(styles.{{camelCase componentName}}, props.className{{# if isCmsComponent }}, 'block-margin'{{/if}})}>
+      {{# if isCmsComponent}}
+      <DebugComponentLabel label='{{pascalCase componentName}}' />
+      {{/if }}
       {{pascalCase componentName}}
     </div>
   );

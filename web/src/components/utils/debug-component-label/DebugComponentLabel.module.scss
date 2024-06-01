@@ -1,0 +1,20 @@
+.debug-component-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: darkblue;
+  padding: 4px;
+  display: none;
+  pointer-events: none;
+  font: normal small-caps 12px/1 monospace;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 3px 0 0 0;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+
+  &.is-visible {
+    display: block;
+    z-index: 99999;
+  }
+}

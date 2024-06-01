@@ -14,6 +14,7 @@ import Icon from '../../atoms/icon/Icon';
 import type { TextRef } from '../../atoms/text/Text.data';
 import PrimaryButton from '../../atoms/primary-button/PrimaryButton';
 import type { PrimaryButtonRef } from '../../atoms/primary-button/PrimaryButton.data';
+import DebugComponentLabel from 'components/utils/debug-component-label/DebugComponentLabel';
 
 export default forwardRef<PrimaryHeroRef, PrimaryHeroProps>(
   (
@@ -57,6 +58,7 @@ export default forwardRef<PrimaryHeroRef, PrimaryHeroProps>(
         ref={elementRef}
         className={classNames(styles.primaryHero, props.className, 'block-margin')}
       >
+        <DebugComponentLabel label="primary-hero" />
         <div className={classNames(styles.textContent, 'grid-gutter max-content-width')}>
           <Icon ref={iconRef} name="twitter" className={classNames(styles.icon)} />
           <Text
