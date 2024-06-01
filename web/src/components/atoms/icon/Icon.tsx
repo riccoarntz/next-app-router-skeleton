@@ -47,7 +47,7 @@ export default forwardRef<HTMLElement, IconProps>(
     //
     // }
 
-    let Component = icons.twitter;
+    let Component = icons[name];
     if (!Component) {
       Component = icons.twitter;
     }
