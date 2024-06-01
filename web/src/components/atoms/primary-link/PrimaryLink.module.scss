@@ -1,0 +1,41 @@
+/* stylelint-disable-next-line block-no-empty */
+.primary-link {
+  white-space: nowrap;
+}
+
+.underline {
+  position: absolute;
+  background-color: currentColor;
+  @include size(100%, 1px);
+  bottom: 3px;
+  transition: transform 0.3s ease 0s;
+  left: 0;
+}
+
+.has-underline {
+  .underline {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+
+  @include hover() {
+    .underline {
+      transform: scaleX(0);
+      transform-origin: right center;
+    }
+  }
+}
+
+.revert-underline {
+  @include hover() {
+    .underline {
+      transform-origin: left center;
+      transform: scaleX(1);
+    }
+  }
+
+  .underline {
+    transform-origin: right center;
+    transform: scaleX(0);
+  }
+}
