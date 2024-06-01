@@ -38,4 +38,12 @@
     transform-origin: right center;
     transform: scaleX(0);
   }
+
+  &:global(.is-active) {
+    cursor: default;
+
+    .underline {
+      transform: scaleX(1);
+    }
+  }
 }
