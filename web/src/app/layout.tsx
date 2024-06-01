@@ -2,6 +2,7 @@ import '../styles/global.scss';
 import type { Metadata } from 'next';
 import GlobalProvider from 'components/unlisted/GlobalProvider';
 import Site from '../components/unlisted/Site';
+import type { Link } from '../data/types/link.types';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +14,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const siteSettings = {};
+  // todo global site settings from prepr?
+  const siteSettings = {
+    menuLinks: [
+      {
+        text: 'home',
+        linkType: 'internal',
+        url: '/',
+      },
+      {
+        text: 'about',
+        linkType: 'internal',
+        url: '/about',
+      },
+    ] as Array<Link>,
+  };
+
   return (
     <html lang="en">
       <body>
