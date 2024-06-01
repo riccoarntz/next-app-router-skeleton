@@ -19,7 +19,7 @@ export default class LenisScroller extends BaseScroller {
     this.instance = new Lenis({
       wrapper: this.options.wrapper,
       content: this.options.content,
-      // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+      // easing: (t) => (t === 1 ? 1 : 1 - 2**(-10 * t)),
       //   easing: (t) => -(Math.cos(Math.PI * t) - 1) / 2, //easeInOutSine
       // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), // outExpo
       easing: (t) =>

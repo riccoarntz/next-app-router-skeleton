@@ -14,7 +14,25 @@ async function getPageData(slug: string, preview?: boolean): Promise<Page> {
       noIndex: false,
       metaTitle: 'metaTitle',
     },
-    blocks: [],
+    blocks: [
+      {
+        _type: 'primaryHero',
+        _key: '1',
+        // @ts-ignore
+        title: 'This is my title',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
+        cta: {
+          text: 'my label',
+          linkType: 'internal',
+          url: '/about',
+        },
+      },
+      {
+        _type: 'relatedArticles',
+        _key: '2',
+      },
+    ],
   };
 }
 

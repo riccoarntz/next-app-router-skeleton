@@ -1,0 +1,45 @@
+/* stylelint-disable-next-line block-no-empty */
+.primary-button {
+  overflow: hidden;
+  flex-shrink: 0;
+  height: 38px;
+  --bg: var(--foreground-color);
+  --color: var(--background-color);
+  --bg-hover: var(--background-color);
+  --color-hover: var(--foreground-color);
+  color: var(--color);
+  background-color: var(--bg);
+  border-radius: 19px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  @include size(100%);
+  padding: 0 24px;
+  background-color: var(--bg);
+  border-radius: inherit;
+}
+
+.background-hover {
+  position: absolute;
+  border-radius: 100%;
+  @include aspect-ratio(1, 1, false);
+  width: 120%;
+  @include offset(50%, 50%);
+  visibility: hidden;
+  background-color: var(--bg-hover);
+  opacity: 0.75;
+}
+
+.label {
+  position: relative;
+}
+
+.hover-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  color: var(--color-hover);
+}

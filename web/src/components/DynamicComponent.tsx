@@ -5,10 +5,12 @@ import Placeholder from 'components/utils/Placeholder';
 import type { CmsModuleData } from 'data/types/module.types';
 
 /* PLOP_INJECT_TEMPLATE_IMPORT */
+import PrimaryHero from 'components/blocks/primary-hero/PrimaryHero';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Components: { [key: string]: ReactElement | any } = {
   /* PLOP_INJECT_TEMPLATE */
+  primaryHero: PrimaryHero,
 };
 
 export type DynamicComponentProps = { canTransitionIn?: boolean; className?: string } & {

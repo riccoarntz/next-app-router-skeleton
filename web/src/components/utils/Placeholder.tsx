@@ -26,6 +26,7 @@ const Placeholder = ({
     <Text
       as="h3"
       size="title-80"
+      variant="sans"
       isVisible={{
         onMount: true,
         value: true,

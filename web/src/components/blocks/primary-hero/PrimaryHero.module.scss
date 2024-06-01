@@ -1,0 +1,34 @@
+/* stylelint-disable-next-line block-no-empty */
+.primary-hero {
+  position: relative;
+  aspect-ratio: 9/16;
+  width: 100%;
+  max-height: calc(var(--vh) * 100 - var(--site-header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-content {
+  text-align: center;
+}
+
+.icon {
+  width: 32px;
+  margin-bottom: 12px;
+}
+
+.description {
+  max-width: column-width(6);
+  margin: 12px auto 0;
+}
+
+.cta {
+  margin-top: 24px;
+}
+
+@include respond-to(MIN_768) {
+  .primary-hero {
+    aspect-ratio: 16/ 9;
+  }
+}

@@ -1,6 +1,6 @@
 // Titles
 @mixin title-80 {
-  line-height: 1;
+  line-height: 1.1;
   @include fluid-font-size(46px, 62px);
   font-weight: font-weight(normal);
 }

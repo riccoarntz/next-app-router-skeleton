@@ -26,3 +26,15 @@
 .split-words {
   white-space: nowrap;
 }
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}

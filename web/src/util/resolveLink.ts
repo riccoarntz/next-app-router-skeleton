@@ -29,7 +29,7 @@ export function resolveLink(linkOrPage: Link | PageReference): {
       text: get(linkOrPage, ['text'], get(linkOrPage, ['page', 'pageTitle'])),
       url: (linkOrPage as Link).page
         ? resolveInternalLinkUrl((linkOrPage as Link).page as PageReference)
-        : '',
+        : (linkOrPage as Link).url,
     };
   }
   return {

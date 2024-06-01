@@ -18,6 +18,7 @@ import {
   defaultDisableTriggerInOnScroll,
 } from 'util/react-transition-component/types/transitionComponent.types';
 import Text from 'components/atoms/text/Text';
+import type { Link } from 'data/types/link.types';
 
 export default forwardRef<{{pascalCase componentName}}Ref, {{pascalCase componentName}}Props>(({
   disableTriggerInOnScroll = defaultDisableTriggerInOnScroll,
@@ -67,7 +68,7 @@ export default forwardRef<{{pascalCase componentName}}Ref, {{pascalCase componen
         as="span"
         size='body-10'
       >
-        {props.label}
+        {props.label || (props.link as Link)?.text}
       </Text>
     </BaseButton>
   );
