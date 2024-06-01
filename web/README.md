@@ -46,6 +46,11 @@ Scripts defined in `"scripts"` of [package.json](/package.json) and are runnable
 
 <hr />
 
+## .env
+
+**`DEV_CACHE_ENABLED=true`** -- cache requests during development
+
+
 ## Scaffolding components
 
 The scaffolding tool in this project is [Plop](https://plopjs.com/) and the template files are
