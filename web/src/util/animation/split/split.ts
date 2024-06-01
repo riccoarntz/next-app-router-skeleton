@@ -123,7 +123,7 @@ export function splitLinesSlideUp(
         ease,
         duration,
         opacity: 1,
-        clearProps: 'y',
+        // clearProps: 'y',
       },
       0,
     );

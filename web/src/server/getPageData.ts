@@ -32,6 +32,19 @@ async function getPageData(slug: string, preview?: boolean): Promise<Page> {
         _type: 'relatedArticles',
         _key: '2',
       },
+      {
+        _type: 'primaryHero',
+        _key: '3',
+        // @ts-ignore
+        title: 'This is my title',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
+        cta: {
+          text: 'my label',
+          linkType: 'internal',
+          url: '/',
+        },
+      },
     ],
   };
 }
