@@ -1,3 +1,5 @@
+'use client';
+
 import DeviceStateTracker, { DeviceStateEvent } from 'seng-device-state-tracker';
 import type IDeviceStateData from 'seng-device-state-tracker/lib/IDeviceStateData';
 import { useCallback, useState } from 'react';

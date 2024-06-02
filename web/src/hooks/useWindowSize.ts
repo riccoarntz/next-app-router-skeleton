@@ -1,3 +1,5 @@
+'use client';
+
 import { debounce } from 'lodash';
 import { useState } from 'react';
 import useEventListener from './useEventListener';

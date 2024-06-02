@@ -1,3 +1,5 @@
+'use client';
+
 import { useRef, useState, createContext, useContext, useEffect, useCallback } from 'react';
 import type { ReactElement, ReactNode, SetStateAction, RefObject, Dispatch } from 'react';
 import type { ScrollerType } from 'util/scroll/ScrollInstance';
