@@ -28,7 +28,7 @@ export type DynamicPageProps = {
 export default async function DynamicPage({ params }: DynamicPageProps) {
   const { slug } = params;
   const { isEnabled: draftEnabled } = draftMode();
-  const pageData = await getPageData(slug?.join('/'), draftEnabled);
+  const pageData = await getPageData(slug?.join('/') || 'home', draftEnabled);
 
   if (!pageData) {
     notFound();

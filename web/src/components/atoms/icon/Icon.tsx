@@ -19,34 +19,6 @@ export default forwardRef<HTMLElement, IconProps>(
     const localRef = useRef(null);
     const elementRef = (ref || localRef) as RefObject<HTMLDivElement>;
 
-    // const ImportedIconRef = useRef<FC<SVGProps<SVGSVGElement>>>();
-    // const [loading, setLoading] = useState(false);
-    // useEffect((): (() => void) => {
-    //   setLoading(true);
-    //   const importIcon = async (): Promise<void> => {
-    //     try {
-    //       ImportedIconRef.current = (await import(`assets/svg/twitter.svg`)).default;
-    //       console.log('load?', ImportedIconRef.current);
-    //     } finally {
-    //       setLoading(false);
-    //     }
-    //   };
-    //
-    //   importIcon();
-    //
-    //   return () => {
-    //     setLoading(false);
-    //   };
-    // }, [name]);
-    //
-    // let child;
-    // if (!loading && ImportedIconRef.current) {
-    //   console.log('set?');
-    //   const { current: ImportedIcon } = ImportedIconRef;
-    //   child = <ImportedIcon {...rest} />;
-    //
-    // }
-
     let Component = icons[name];
     if (!Component) {
       Component = icons.twitter;
