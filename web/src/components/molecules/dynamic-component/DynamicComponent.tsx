@@ -1,7 +1,7 @@
 /* eslint-disable import/no-cycle */
 import type { ReactElement } from 'react';
 import { forwardRef } from 'react';
-import Placeholder from 'components/utils/Placeholder';
+import Placeholder from 'components/blocks/placeholder/Placeholder';
 import type { CmsModuleData } from 'data/types/module.types';
 
 /* PLOP_INJECT_TEMPLATE_IMPORT */

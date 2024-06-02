@@ -3,7 +3,7 @@ import styles from './page.module.scss';
 import getPageData from '../../server/getPageData';
 import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
-import PageContentRenderer from '../../components/unlisted/PageContentRenderer';
+import PageContentRenderer from '../../components/layout/page-content-renderer/PageContentRenderer';
 
 export async function generateStaticParams() {
   // todo prepr get all paths?

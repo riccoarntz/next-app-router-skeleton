@@ -83,7 +83,7 @@ export default function(plop) {
         actions.push({
           data,
           type: "append",
-          path: "src/components/DynamicComponent.tsx",
+          path: "src/components/molecules/dynamic-component/DynamicComponent.tsx",
           pattern: /(\/\* PLOP_INJECT_TEMPLATE_IMPORT \*\/)/gi,
           template: `import  {{pascalCase componentName}} from '${rootDir}/${subFolder}{{kebabCase componentName}}/{{pascalCase componentName}}';`
         });
@@ -91,7 +91,7 @@ export default function(plop) {
         actions.push({
           data,
           type: "append",
-          path: "src/components/DynamicComponent.tsx",
+          path: "src/components/molecules/dynamic-component/DynamicComponent.tsx",
           pattern: /(\/\* PLOP_INJECT_TEMPLATE \*\/)/gi,
           template: `  {{camelCase componentName}}: {{pascalCase componentName}},`
         });

@@ -1,9 +1,7 @@
-'use client';
-
 import classNames from 'clsx';
-import styles from '../../app/page.module.css';
-import DynamicComponent from '../DynamicComponent';
-import type { Page } from '../../data/types/page.types';
+import styles from '../../../app/page.module.css';
+import DynamicComponent from '../../molecules/dynamic-component/DynamicComponent';
+import type { Page } from '../../../data/types/page.types';
 
 export default function PageContentRenderer({
   page,
