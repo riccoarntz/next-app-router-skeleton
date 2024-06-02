@@ -2,13 +2,12 @@
 
 import classNames from 'clsx';
 import type { ReactElement } from 'react';
-import { forwardRef } from 'react';
 import styles from './SiteHeader.module.scss';
-import type { SiteHeaderProps, SiteHeaderRef } from './SiteHeader.data';
+import type { SiteHeaderProps } from './SiteHeader.data';
 import PrimaryLink from '../../atoms/primary-link/PrimaryLink';
 import { useGlobalProvider } from '../../unlisted/GlobalProvider';
 
-export default forwardRef<SiteHeaderRef, SiteHeaderProps>(({ ...props }): ReactElement => {
+export default function SiteHeader({ ...props }: SiteHeaderProps): ReactElement {
   const { siteSettings } = useGlobalProvider();
 
   return (
@@ -26,4 +25,4 @@ export default forwardRef<SiteHeaderRef, SiteHeaderProps>(({ ...props }): ReactE
       </nav>
     </header>
   );
-});
+}

@@ -2,13 +2,12 @@
 
 import classNames from 'clsx';
 import type { ReactElement } from 'react';
-import { forwardRef } from 'react';
 import styles from './SiteFooter.module.scss';
-import type { SiteFooterProps, SiteFooterRef } from './SiteFooter.data';
+import type { SiteFooterProps } from './SiteFooter.data';
 import PrimaryLink from '../../atoms/primary-link/PrimaryLink';
 import { useGlobalProvider } from '../../unlisted/GlobalProvider';
 
-export default forwardRef<SiteFooterRef, SiteFooterProps>(({ ...props }): ReactElement => {
+export default function SiteFooter({ ...props }: SiteFooterProps): ReactElement {
   const { siteSettings } = useGlobalProvider();
 
   return (
@@ -24,4 +23,4 @@ export default forwardRef<SiteFooterRef, SiteFooterProps>(({ ...props }): ReactE
       </div>
     </footer>
   );
-});
+}
