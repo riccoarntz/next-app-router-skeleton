@@ -35,7 +35,7 @@ export default forwardRef<DynamicComponentRef, DynamicComponentProps>(
     }
 
     return data && data._type ? (
-      <Placeholder className={className} componentName={data._type} key={data._type} />
+      <Placeholder className={className} data={data} componentName={data._type} key={data._type} />
     ) : null;
   },
 );
